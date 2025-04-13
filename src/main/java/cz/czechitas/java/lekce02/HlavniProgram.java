@@ -9,93 +9,99 @@ public class HlavniProgram {
         new HlavniProgram().start();
     }
 
-    private void nakresliPrasatko() {
-
-    }
 
     public void start() {
         zofka = new Turtle();
         nakresliPrasatko();
 
-        //TODO tady bude kód
 
+        //TODO tady bude kód
+    }
+
+    private void nakresliPrasatko() {
         //hlava
         for (int i = 0; i < 3; i++) {
-            zofka.move(150);
+            zofka.move(50);
             zofka.turnLeft(120);
-            zofka.move(150);
+            zofka.move(50);
         }
+
         //tělo
         zofka.penUp();
-        zofka.move(150);
+        zofka.move(50);
         zofka.turnRight(90);
 
         zofka.penDown();
 
-        zofka.move(400);
+        zofka.move(130);
         zofka.turnRight(90);
-        zofka.move(300);
+        zofka.move(100);
         zofka.turnRight(90);
-        zofka.move(400);
+        zofka.move(130);
+
 
         //první nožička
         zofka.turnLeft(60);
-        zofka.move(80);
+        zofka.move(30);
 
         //otočíme nahoru
-        /*
-        zofka.penUp();
-        zofka.turnLeft(180);
-        zofka.move(80);
-         */
+            /*
+            zofka.penUp();
+            zofka.turnLeft(180);
+            zofka.move(80);
+             */
 
         otocimeNahoru();
 
         //druhá nožička
         zofka.turnRight(120);
         zofka.penDown();
-        zofka.move(80);
+        zofka.move(30);
 
         //otočíme nahoru
-        /*
-        zofka.penUp();
-        zofka.turnLeft(180);
-        zofka.move(80);
-        */
+            /*
+            zofka.penUp();
+            zofka.turnLeft(180);
+            zofka.move(80);
+            */
 
         otocimeNahoru();
 
         //přejdeme na konec těla
         zofka.penUp();
         zofka.turnRight(120);
-        zofka.move(400);
+        zofka.move(130);
 
         //třetí nožička
         zofka.turnRight(120);
         zofka.penDown();
-        zofka.move(80);
+        zofka.move(30);
 
         //otočíme nahoru
-        /*
-        zofka.penUp();
-        zofka.turnLeft(180);
-        zofka.move(80);
-         */
+            /*
+            zofka.penUp();
+            zofka.turnLeft(180);
+            zofka.move(80);
+             */
 
         otocimeNahoru();
 
         //čtvrtá nožička
         zofka.turnRight(120);
         zofka.penDown();
-        zofka.move(80);
-
+        zofka.move(30);
 
     }
-
 
     public void otocimeNahoru() {
         zofka.penUp();
         zofka.turnLeft(180);
-        zofka.move(80);
+        zofka.move(30);
+
     }
+
 }
+
+
+
+

@@ -9,90 +9,93 @@ public class HlavniProgram {
         new HlavniProgram().start();
     }
 
+    private void nakresliPrasatko() {
+
+    }
+
     public void start() {
         zofka = new Turtle();
+        nakresliPrasatko();
 
         //TODO tady bude kód
 
-/*
-
-Jednoduchý zápis kódu "krok po kroku"
-
-System.out.println("začátek");
-zofka.move(50);
-zofka.penUp();
-zofka.move(100);
-
-System.out.println("za mezerou");
-zofka.penDown();
-zofka.move(100);
-
-zofka.turnRight(90);
-System.out.println("po otočce");
-
-zofka.move(100);
-
-System.out.println("Želvááá");
-*/
-
-        //cyklus for - pro opakování věcí, které známe
-        //for (int i = 0; i < 10; i++) {}
-
-
-//opět jednoduše napsaný kód, který se opakuje
-/*
-  zofka.move(100);
-  zofka.turnRight(90);
-  zofka.move(100);
-  zofka.turnRight(90);
-  zofka.move(100);
-  zofka.turnRight(90);
-  zofka.move(100);
-  zofka.turnRight(90);
-*/
-
-        //lepší kod pro stejnou věc, kterou chceme udělat
-        //a ted tento kod zakomentuju a misto toho zavolam metodu
-        /*
-        for (int i = 0; i < 4; i++) {
-            zofka.move(100);
-            zofka.turnRight(90);
+        //hlava
+        for (int i = 0; i < 3; i++) {
+            zofka.move(150);
+            zofka.turnLeft(120);
+            zofka.move(150);
         }
-        */
-
-        //zavolali jsme metodu
-        nakresliCtverec();
-
+        //tělo
         zofka.penUp();
-
+        zofka.move(150);
         zofka.turnRight(90);
-        zofka.move(200);
-        zofka.turnLeft(90);
+
         zofka.penDown();
 
-        //toto jsme vyjmuli a udělali radši metodu
-
-        /*
-        for (int i = 0; i < 4; i++) {
-        zofka.move(100);
+        zofka.move(400);
         zofka.turnRight(90);
-        }
+        zofka.move(300);
+        zofka.turnRight(90);
+        zofka.move(400);
+
+        //první nožička
+        zofka.turnLeft(60);
+        zofka.move(80);
+
+        //otočíme nahoru
+        /*
+        zofka.penUp();
+        zofka.turnLeft(180);
+        zofka.move(80);
+         */
+
+        otocimeNahoru();
+
+        //druhá nožička
+        zofka.turnRight(120);
+        zofka.penDown();
+        zofka.move(80);
+
+        //otočíme nahoru
+        /*
+        zofka.penUp();
+        zofka.turnLeft(180);
+        zofka.move(80);
         */
 
-        // a nyní zavoláme metodu
-        nakresliCtverec();
+        otocimeNahoru();
+
+        //přejdeme na konec těla
+        zofka.penUp();
+        zofka.turnRight(120);
+        zofka.move(400);
+
+        //třetí nožička
+        zofka.turnRight(120);
+        zofka.penDown();
+        zofka.move(80);
+
+        //otočíme nahoru
+        /*
+        zofka.penUp();
+        zofka.turnLeft(180);
+        zofka.move(80);
+         */
+
+        otocimeNahoru();
+
+        //čtvrtá nožička
+        zofka.turnRight(120);
+        zofka.penDown();
+        zofka.move(80);
+
+
     }
 
 
-    //metody - abychom neměli více opakujících se bloků kódu - vlastni metoda - a ted, na to místo, kde jsem měla napsaný kód, zavolám metodu nakresliCtverec
-
-    public void nakresliCtverec() {
-        for (int i = 0; i < 4; i++) {
-            zofka.move(100);
-            zofka.turnRight(90);
-        }
+    public void otocimeNahoru() {
+        zofka.penUp();
+        zofka.turnLeft(180);
+        zofka.move(80);
     }
-
-
-
 }

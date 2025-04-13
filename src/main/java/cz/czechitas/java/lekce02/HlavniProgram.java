@@ -91,6 +91,8 @@ public class HlavniProgram {
         zofka.penDown();
         zofka.move(30);
 
+        prejdiNaCistePlatnoVpravo();
+
     }
 
     public void otocimeNahoru() {
@@ -99,6 +101,15 @@ public class HlavniProgram {
         zofka.move(30);
 
     }
+
+    public void prejdiNaCistePlatnoVpravo() {
+        zofka.penUp();
+        zofka.turnLeft(60);
+        zofka.move(100);
+    }
+
+
+
 
 }
 

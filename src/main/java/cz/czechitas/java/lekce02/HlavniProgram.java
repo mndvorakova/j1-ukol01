@@ -13,11 +13,13 @@ public class HlavniProgram {
 
     public void start() {
         zofka = new Turtle();
-        //nakresliTvarDomecku(50, 100);
-        nakresliPrasatko(50, 100);
-        sestiuhelnik();
-        nakresliKolecko();
+        nakresliPrasatko();
+        //sestiuhelnik();
+        //nakresliKolecko();
         nakresliSlunicko();
+        nakresliDomecky();
+        odlehleDomecky();
+        jmeno();
 
 
         //TODO tady bude kód
@@ -25,17 +27,19 @@ public class HlavniProgram {
 
 
 
-    public void nakresliPrasatko(double sirkaPig, double vyskaPig) {
+    public void nakresliPrasatko() {
+        //posuneme tužku více dolů
+        zofka.penUp();
+        zofka.turnLeft(180);
+        zofka.move(200);
+        zofka.turnRight(180);
+        zofka.penDown();
+
         //hlava_střecha
         hlavaStrecha();
 
         //obdélníček
-        for (int i = 0; i < 2; i++) {
-            zofka.move(50);
-            zofka.turnRight(90);
-            zofka.move(100);
-            zofka.turnRight(90);
-        }
+        obdelnik(50, 100);
 
         //první přední nožička
         zofka.turnLeft(150);
@@ -70,27 +74,15 @@ public class HlavniProgram {
         zofka.penDown();
         zofka.move(20);
 
-        zvedniTuzkuAPosunSe();
+        //zvedniTuzkuAPosunSe();
 
 
     }
 
-    public void nakresliTvarDomecku(double sirka, double vyska ) {
-
-        //hlava_střecha
-        hlavaStrecha();
-
-        //obdélníček
-        for (int i = 0; i < 2; i++) {
-            zofka.move(sirka);
-            zofka.turnRight(90);
-            zofka.move(vyska);
-            zofka.turnRight(90);
-        }
-
-    }
 
 
+
+    //definovana metoda pro kreslení nožiček a otočení tužky
     public void kreslimNozickyPrasatka() {
         zofka.turnRight(180);
         zofka.penUp();
@@ -98,6 +90,7 @@ public class HlavniProgram {
     }
 
 
+    //definovana metoda pro hlavu prasátka
     public void hlavaStrecha() {
         for (int i = 0; i < 3; i++) {
             zofka.move(50);
@@ -107,6 +100,7 @@ public class HlavniProgram {
 
     }
 
+    /*
     public void zvedniTuzkuAPosunSe() {
         zofka.penUp();
         zofka.move(80);
@@ -116,9 +110,20 @@ public class HlavniProgram {
         zofka.penDown();
     }
 
+     */
+
+    //metoda pro kreslení obdelniku u prasatka a domecku
+    public void obdelnik(double sirka, double vyska) {
+        for (int i = 0; i < 2; i++) {
+            zofka.move(50);
+            zofka.turnRight(90);
+            zofka.move(100);
+            zofka.turnRight(90);
+        }
+    }
 
 
-
+    /*
     public void sestiuhelnik() {
         zofka.turnLeft(90);
         zofka.penDown();
@@ -133,28 +138,37 @@ public class HlavniProgram {
         zvedniTuzkuAPosunSe();
     }
 
+     */
+
     //metoda pro nakresleni kolecka
+    /*
     public void nakresliKolecko(){
         for (int i = 0; i < 18; i++) {
             zofka.move(10);
             zofka.turnRight(25);
 
         }
-        zofka.penUp();
+
 
     }
-
+     */
 
     public void nakresliSlunicko() {
 
         //přesun na oblohu
-        zofka.turnRight(100);
-        zofka.move(650);
+        zofka.penUp();
+        zofka.turnRight(120);
+        zofka.move(600);
         zofka.turnRight(90);
-        zofka.move(70);
+        zofka.move(500);
         zofka.penDown();
 
-        nakresliKolecko(); //zelva skonci uprostred bodu leve casti kruhu
+        //nakreslení kolečka
+        for (int i = 0; i < 18; i++) {
+            zofka.move(10);
+            zofka.turnRight(25);
+
+        }
 
         zofka.penUp();
 
@@ -174,7 +188,55 @@ public class HlavniProgram {
             zofka.move(10);
             zofka.turnRight(25);
         }
+        //nachystame tuzku pro novou kresbu
+        zofka.penUp();
+        zofka.turnRight(100);
+        zofka.move(200);
+        zofka.turnLeft(90);
+        zofka.penDown();
+
     }
+
+    //vodorovný domečky
+    public void nakresliDomecky() {
+
+        for (int i = 0; i < 5; i++) {
+            hlavaStrecha();
+            obdelnik(50, 80);
+            zofka.penUp();
+            zofka.move(120);
+            zofka.penDown();
+        }
+        //nachystame tužku pro další kreslení
+        zofka.penUp();
+        zofka.move(120);
+        zofka.turnRight(90);
+        zofka.move(200);
+        zofka.turnLeft(90);
+        zofka.penDown();
+
+    }
+    public void odlehleDomecky() {
+        hlavaStrecha();
+        obdelnik(50, 80);
+
+        zofka.penUp();
+        zofka.turnLeft(180);
+        zofka.move(700);
+        zofka.turnLeft(180);
+        zofka.penDown();
+
+        hlavaStrecha();
+        obdelnik(50, 80);
+
+
+    }
+
+    public void jmeno() {
+
+    }
+
+
 }
 
 

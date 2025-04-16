@@ -15,7 +15,9 @@ public class HlavniProgram {
         zofka = new Turtle();
         //nakresliTvarDomecku(50, 100);
         nakresliPrasatko(50, 100);
-        zvedniTuzkuAPosunSe();
+        sestiuhelnik();
+        nakresliKolecko();
+        nakresliSlunicko();
 
 
         //TODO tady bude kód
@@ -105,17 +107,74 @@ public class HlavniProgram {
 
     }
 
-
     public void zvedniTuzkuAPosunSe() {
         zofka.penUp();
-        zofka.turnRight(90);
+        zofka.move(80);
+        zofka.turnLeft(60);
         zofka.move(100);
-        zofka.turnLeft(150);
-        zofka.move(150);
         zofka.turnLeft(90);
         zofka.penDown();
     }
 
+
+
+
+    public void sestiuhelnik() {
+        zofka.turnLeft(90);
+        zofka.penDown();
+        zofka.move(50);
+
+        for (int i = 0; i < 6; i++) {
+            zofka.turnRight(60);
+            zofka.move(50);
+        }
+
+        zofka.penUp();
+        zvedniTuzkuAPosunSe();
+    }
+
+    //metoda pro nakresleni kolecka
+    public void nakresliKolecko(){
+        for (int i = 0; i < 18; i++) {
+            zofka.move(10);
+            zofka.turnRight(25);
+
+        }
+        zofka.penUp();
+
+    }
+
+
+    public void nakresliSlunicko() {
+
+        //přesun na oblohu
+        zofka.turnRight(100);
+        zofka.move(650);
+        zofka.turnRight(90);
+        zofka.move(70);
+        zofka.penDown();
+
+        nakresliKolecko(); //zelva skonci uprostred bodu leve casti kruhu
+
+        zofka.penUp();
+
+
+        //paprsky sluníčka
+        for (int i = 0; i < 14; i++) {
+
+            zofka.turnLeft(90);
+            zofka.penDown();
+            zofka.move(40);
+
+            //vrat se zpátky
+            zofka.penUp();
+            zofka.move(-40);
+
+            zofka.turnRight(90);
+            zofka.move(10);
+            zofka.turnRight(25);
+        }
+    }
 }
 
 

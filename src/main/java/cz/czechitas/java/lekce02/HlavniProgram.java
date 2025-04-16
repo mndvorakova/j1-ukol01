@@ -13,8 +13,9 @@ public class HlavniProgram {
 
     public void start() {
         zofka = new Turtle();
-        nakresliTvarDomecku(50, 100);
+        //nakresliTvarDomecku(50, 100);
         nakresliPrasatko(50, 100);
+        zvedniTuzkuAPosunSe();
 
 
         //TODO tady bude kód
@@ -33,9 +34,41 @@ public class HlavniProgram {
             zofka.move(100);
             zofka.turnRight(90);
         }
+
+        //první přední nožička
+        zofka.turnLeft(150);
+        zofka.move(20);
+
+        //otočení zpět
+        kreslimNozickyPrasatka();
+
+        //druhá přední nožička
+        zofka.turnRight(120);
+        zofka.penDown();
+        zofka.move(20);
+
+        //otočení zpět
+        kreslimNozickyPrasatka();
+
+
+        zofka.turnRight(120);
+
+        //přesun k zadní části
+        zofka.move(100);
+
+        //první zadní nožička
+        zofka.turnRight(120);
+        zofka.penDown();
+        zofka.move(20);
+
+        kreslimNozickyPrasatka();
+
+        //druha zadni nožička
+        zofka.turnRight(120);
+        zofka.penDown();
+        zofka.move(20);
+
         zvedniTuzkuAPosunSe();
-
-
 
 
     }
@@ -56,7 +89,11 @@ public class HlavniProgram {
     }
 
 
-
+    public void kreslimNozickyPrasatka() {
+        zofka.turnRight(180);
+        zofka.penUp();
+        zofka.move(20);
+    }
 
 
     public void hlavaStrecha() {
@@ -68,11 +105,14 @@ public class HlavniProgram {
 
     }
 
+
     public void zvedniTuzkuAPosunSe() {
         zofka.penUp();
-        zofka.turnRight(180);
-        zofka.move(80);
-        zofka.turnLeft(180);
+        zofka.turnRight(90);
+        zofka.move(100);
+        zofka.turnLeft(150);
+        zofka.move(150);
+        zofka.turnLeft(90);
         zofka.penDown();
     }
 

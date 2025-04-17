@@ -175,6 +175,7 @@ public class HlavniProgram {
         zofka.turnLeft(90);
         zofka.penDown();
 
+
     }
 
     public void presunNaOblohu() {
